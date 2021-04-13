@@ -14,28 +14,37 @@
 
     <jsp:body>
 
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h2>BMI beregner</h2>
+                <form method="post" action="fc/bmiresult">
+                    <div class="form-group">
+                        <label for="height">Højde i cm: </label>
+                        <input id="height" name="height" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Vægt i kg: </label>
+                        <input id="weight" name="weight" type="text" class="form-control"/><br/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Beregn BMI</button>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
         <div>
-            <h2>BMI beregner</h2>
-
-            <form method="post" action="fc/bmiresult">
-                <label for="height">Højde i cm: </label>
-                <input id="height" name="height" type="text"/><br/>
-                <label for="weight">Vægt i kg: </label>
-                <input id="weight" name="weight" type="text"/><br/>
-                <button type="submit">Beregn BMI</button>
-            </form>
 
             <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
+            <p style="font-size: larger">This is what you can do,
+                since your are logged in as an employee</p>
+            <p><a href="fc/employeepage">Employee Page</a>
+                </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
+                <c:if test="${sessionScope.role == 'customer' }">
+            <p style="font-size: larger">This is what you can do, since your
+                are logged in as a customer</p>
+            <p><a href="fc/customerpage">Customer Page</a>
+                </c:if>
 
         </div>
 
