@@ -36,7 +36,6 @@
                     hobby: ${hobbyItem}<br/>
                 </c:forEach>
 
-
                 <div class="col-sm-4"></div>
             </div>
         </div>
