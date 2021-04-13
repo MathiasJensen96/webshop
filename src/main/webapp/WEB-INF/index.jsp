@@ -18,7 +18,7 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h2>BMI beregner</h2>
-                <form method="post" action="fc/bmiresult">
+                <form method="post" action="${pageContext.request.contextPath}/fc/bmiresult">
                     <div class="form-group">
                         <label for="height">Højde i cm: </label>
                         <input id="height" name="height" type="text" class="form-control"/>
@@ -27,12 +27,18 @@
                         <label for="weight">Vægt i kg: </label>
                         <input id="weight" name="weight" type="text" class="form-control"/><br/>
                     </div>
+                    <c:if test="${requestScope.error != null}">
+                        <p style="color:red">
+                                ${requestScope.error}
+                        </p>
+                    </c:if>
                     <button type="submit" class="btn btn-primary">Beregn BMI</button>
                 </form>
             </div>
             <div class="col-sm-4"></div>
         </div>
         <div>
+
 
             <c:if test="${sessionScope.role == 'employee' }">
             <p style="font-size: larger">This is what you can do,
