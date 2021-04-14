@@ -12,7 +12,7 @@
         <h1>Hello ${sessionScope.email} </h1>
         This is a list of all BMI Entries in the database so far:
 
-        <table>
+        <table class="table table-striped">
             <thead><th>Id</th><th>BMI</th><th>Højde</th><th>Vægt</th><th>Køn</th></thead>
             <c:forEach var="bmiEntry" items="${requestScope.bmiEntryList}">
                 <tr>

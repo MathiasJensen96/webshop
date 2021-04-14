@@ -9,10 +9,15 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
+
+        <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+
         <h1>Hello ${sessionScope.email} </h1>
         This is a list of all your BMI Entries in the database so far:
 
-        <table>
+        <table class="table">
             <thead><th>Id</th><th>BMI</th><th>Højde</th><th>Vægt</th><th>Køn</th></thead>
             <c:forEach var="bmiEntry" items="${requestScope.bmiEntryList}">
                 <tr>
@@ -25,6 +30,8 @@
             </c:forEach>
 
         </table>
+        </div>
+        <div class="col-sm-4">
 
     </jsp:body>
 </t:genericpage>
