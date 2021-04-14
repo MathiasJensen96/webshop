@@ -43,4 +43,9 @@ public class BmiFacade {
     {
         return bmiMapper.getAllSports();
     }
+
+    public int deleteSport(int sportId) throws UserException
+    {
+        return bmiMapper.deleteSport(sportId);
+    }
 }
