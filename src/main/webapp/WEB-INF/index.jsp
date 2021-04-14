@@ -28,17 +28,16 @@
                         <input id="weight" name="weight" type="text" class="form-control"/><br/>
                     </div>
 
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
 
                     <label for="sport">Din primære idræt:</label>
                     <select name="sport" id="sport">
-                        <option value="1">Fodbold</option>
-                        <option value="2">Gymnastik</option>
-                        <option value="3">Yoga</option>
-                        <option value="4">Badminton</option>
+                        <c:forEach var="sport" items="${applicationScope.sportList}">
+                            <option value="${sport.sport_id}">${sport.name}</option>
+                        </c:forEach>
                     </select>
 
                     <br/>
