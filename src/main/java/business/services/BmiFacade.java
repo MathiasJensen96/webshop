@@ -1,5 +1,6 @@
 package business.services;
 
+import business.entities.BmiEntry;
 import business.exceptions.UserException;
 import business.persistence.BmiMapper;
 import business.persistence.Database;
@@ -15,6 +16,12 @@ public class BmiFacade {
 
         this.bmiMapper = new BmiMapper(database);
     }
+
+    public List<BmiEntry> getAllBmiDataEntries() throws UserException {
+        return bmiMapper.getAllBmiDataEntries();
+    }
+
+
 
     public void insertBmiEntry(
             double bmi,
